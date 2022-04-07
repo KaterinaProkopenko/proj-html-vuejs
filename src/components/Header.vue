@@ -1,8 +1,8 @@
 <template>
   <header>
-      <div class="ms-container">
+      <div class="container">
           <div class="row">
-              <div class="col-12 d-flex justify-content-between">
+              <div class="col-12 d-flex justify-content-evenly">
 
                   <!-- Logo -->
                   <div class="logo-container d-flex align-items-center">
