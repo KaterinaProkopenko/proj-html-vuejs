@@ -34,24 +34,29 @@
             
     </section>
 
-      <section id="start-learning">
-          <div class="ms-container">
-              <div class="row">
-                  <div class="col-12">
-                      <h5></h5>
-                      <h1></h1>
-                      <div class="card text-center">
-                            <img src="../assets/img/home-5-image-box-01.png" class="card-img-top" alt="01">
-                            <div class="card-body">
-                                <h6 class="card-title">Card title</h6>
-                                <p class="card-text card-font-size">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-light card-font-size fw-bold">Go somewhere<i class="bi bi-arrow-right ps-2"></i></a>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+    <section id="start-learning" class="my-5">
+        <div class="ms-container">
+            <div class="row pt-3">
+                <div class="col-12 text-center">
+                    <h6 class="text-uppercase card-font-size pb-1">start learning coding languages</h6>
+                    <h1 class="d-inline-block fw-bold">Build Your Dream</h1>
+                    <span class="text-uppercase fs-1 ps-2">today</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card text-center" v-for="(element, index) in startLearningCards" :key="index">
+                        <img :src="require(`../assets/img/${element.image}`)" class="card-img-top" :alt="index">
+                            <h6 class="card-title">{{element.title}}</h6>
+                            <p class="card-text card-font-size">{{element.text}}</p>
+                            <a href="#" class="btn btn-light card-font-size fw-bold">Start now<i class="bi bi-arrow-right ps-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
       
   </main>
@@ -149,6 +154,18 @@ main{
     section#start-learning{
         height: 350px;
         background-color: yellowgreen;
+
+        h6{
+            color: $brandColorContentText;
+        }
+
+        h1{
+            color: $brandColorTextPrimary;
+        }
+
+        span{
+            color: $brandColorTextSecondary;
+        }
 
         div.card{
             width: 200px;
