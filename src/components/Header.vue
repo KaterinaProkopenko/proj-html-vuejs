@@ -1,8 +1,8 @@
 <template>
   <header>
-      <div class="container">
+      <div class="ms-container">
           <div class="row">
-              <div class="col-12 d-flex justify-content-evenly">
+              <div class="col-12 d-flex justify-content-between">
 
                   <!-- Logo -->
                   <div class="logo-container d-flex align-items-center">
@@ -22,13 +22,13 @@
 
                       <!-- Cart -->
                       <a href="#" id="cart" class="position-relative pt-1 text-dark ms-2">
-                          <i class="fas fa-shopping-cart"></i>
+                          <i class="bi bi-cart3 fs-5"></i>
                           <span id="circle" class="fw-bold rounded-circle position-absolute text-light">0</span>
                       </a>
 
                       <!-- User -->
                       <a href="#" id="user" class="text-dark rounded-circle mx-3">
-                          <i class="far fa-user"></i>
+                          <i class="far fa-user-circle"></i>
                       </a>
 
                       <!-- Input search -->
@@ -85,16 +85,9 @@ header{
                 background-color: $brandColorTextSecondary;
                 padding: .1rem .3rem;
                 font-size: .5rem;
-                right: 0;
+                right: 2px;
                 top: 0;
             }
-
-        }
-
-        a#user{
-            padding: 1px 5px;
-            font-size: .7rem;
-            border: 1px solid black;
         }
     }
 
