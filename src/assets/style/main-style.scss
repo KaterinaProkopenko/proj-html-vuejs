@@ -34,9 +34,10 @@ h6{
 
 .text-size {
     font-size: .8rem;
+    color: $brandColorContentText;
 }
 
-span.in-title{
+.in-title{
     color: $brandColorTextSecondary;
   }
 
@@ -48,4 +49,8 @@ span.in-title{
 .hover-button{
     background-color: $brandColorTextPrimary;
     border: 1px solid $brandColorTextPrimary;
+}
+
+.hover-card-contact{
+    border-left: 3px solid $brandColorTextSecondary;
 }

@@ -167,7 +167,7 @@
           </div>
 
           <!-- Container of cards -->
-          <div class="col-12 d-flex gap-2 w-100 flex-wrap justify-content-center gap-3">
+          <div class="col-12 d-flex w-100 flex-wrap justify-content-center gap-3">
 
             <!-- card -->
             <div @mouseover="getHoverCard(index)" @mouseleave="leaveHoverCard(index)"  v-for="(element, index) in coursesCards" :key="index" :class="(element.hoverEffect) ? 'shadow bg-light' : 'bg-transparent'" class="card border-0 w-25 position-relative">
@@ -204,6 +204,7 @@
               <i class="bi bi-arrow-right p1-2" role="button"></i>
             </a>
           </div>
+        </div>
       </div>
     </section>
 
@@ -289,6 +290,65 @@
           </div>
 
           
+        </div>
+      </div>
+    </section>
+
+    <section id="get-in-contact" class="position-relative mt-5">
+      <!-- Background -->
+      <div class="bg-color-contact w-100 h-100 position-absolute top-0"></div>
+
+      <div class="ms-container position-relative">
+
+        <div class="row pt-3">
+          <!-- Container of title -->
+          <div class="col-12 text-center pb-4">
+
+            <!-- Under title -->
+            <h6 class="text-uppercase text-size pb-1">
+              get in contact now
+            </h6>
+
+            <!-- Title -->
+            <h1 class="d-inline-block fw-bold main-color">Upcoming</h1>
+            <span class="fs-1 ps-2 in-title">Events</span>
+          </div>
+
+          <!-- Container of cards -->
+          <div class="col-12 w-100 d-flex flex-wrap gap-4 justify-content-center my-4">
+           <!--  d-flex gap-2 w-100 flex-wrap justify-content-center gap-3 -->
+
+            <!-- Card -->
+            <div @mouseover="getHoverCardLocation(index)" @mouseleave="leaveHoverCardLocation(index)" :class="(element.hover) ? 'shadow bg-light hover-card-contact' : ''" class="contact-card rounded d-flex justify-content-between p-4" v-for="(element, index) in getInContactCards" :key="index">
+
+              <!-- @mouseover="getHoverCardLocation(index)" @mouseleave="leaveHoverCardLocation(index)" -->
+              <!-- :class="(element.hoverEffect) ? 'shadow bg-light' : 'bg-transparent'" -->
+
+              <div class="location">
+                <p class="text-size mb-0">
+                  <i class="bi bi-geo-alt"></i>
+                  {{element.location}}
+                  </p>
+                <h6 class="text-dark fw-bold pt-2">{{element.title}}</h6>
+              </div>
+
+              <div class="date text-center">
+                <div class="in-title fs-1 lh-1">{{element.dateOfMonth}}</div>
+                <h6 class="text-dark fw-bold">{{element.month}}</h6>
+                <a :class="(element.hover) ? 'hover-button' : 'static-button'" class="btn text-light py-1 px-4 fw-bold position-relative my-btn-fs static-button">
+                  Get ticket
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Container of link -->
+          <div class="col-12 text-center pt-4 link-container d-flex justify-content-center">
+            <h6>Excited about our event?</h6>
+            <a href="#" class="lh-sm fw-bold border-bottom ps-1">
+              <div>View all events<i class="bi bi-arrow-right ps-1"></i></div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -433,6 +493,50 @@ export default {
           listElement: 'Get the desired certificate delivered at house'
         }
       ],
+      getInContactCards: [
+        {
+          location: 'Texas, US',
+          title: 'Storytelling Workshop',
+          dateOfMonth: 22,
+          month: 'nov',
+          hover: false
+        },
+        {
+          location: 'New York, US',
+          title: 'Painting Art Contest 2020',
+          dateOfMonth: 10,
+          month: 'oct',
+          hover: false
+        },
+        {
+          location: 'Hamburg, Germany',
+          title: 'International Art Fair 2020',
+          dateOfMonth: 23,
+          month: 'nov',
+          hover: false
+        },
+        {
+          location: 'Illinois, US',
+          title: 'Street Performance: Call for Artist',
+          dateOfMonth:15,
+          month: 'dec',
+          hover: false
+        },
+        {
+          location: 'Illinois, US',
+          title: 'Costumer Food Safety Education Conference',
+          dateOfMonth: 22,
+          month: 'jul',
+          hover: false
+        },
+        {
+          location: 'Dubai',
+          title: 'How meditation improve your mental health?',
+          dateOfMonth: 12,
+          month: 'aug',
+          hover: false
+        },
+      ],
     };
   },
   methods: {
@@ -443,6 +547,14 @@ export default {
 
     leaveHoverCard(index){
       this.coursesCards[index].hoverEffect = false;
+    },
+
+    getHoverCardLocation(index){
+      this.getInContactCards[index].hover = true;
+    },
+
+    leaveHoverCardLocation(index){
+      this.getInContactCards[index].hover = false;
     }
   }
 };
@@ -632,6 +744,42 @@ main {
 
     img#learn-mobile-main-img{
       width: 50%;
+    }
+  }
+
+  section#get-in-contact{
+    height: 780px;
+    background-color: $brandPrimary;
+
+    div.bg-color-contact{
+      background-color: white;
+      border-radius: 0 0 38% 0;
+    }
+
+    div.contact-card{
+      background-color: $brandPrimary;
+      width: calc(95% / 2);
+
+        div.date{
+
+          div{
+            height: 40px;
+          }
+
+          a{
+            font-size: .8rem;
+          }
+      }
+    }
+
+    div.link-container{
+      h6{
+        color: $brandColorContentText;
+      }
+
+      a{
+        height: 22px;
+      }
     }
   }
 }
