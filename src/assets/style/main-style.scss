@@ -16,6 +16,30 @@ a{
 
 }
 
+li{
+    list-style-type: none;
+}
+
+.main-color {
+    color: $brandColorTextPrimary;
+}
+
+h6{
+    color: $brandColorTextPrimary;
+}
+
+.my-btn-fs{
+    font-size: .9rem;
+}
+
+.text-size {
+    font-size: .8rem;
+}
+
+span.in-title{
+    color: $brandColorTextSecondary;
+  }
+
 .static-button{
     background-color: $brandColorTextSecondary;
     border: 1px solid $brandColorTextSecondary;
@@ -24,16 +48,4 @@ a{
 .hover-button{
     background-color: $brandColorTextPrimary;
     border: 1px solid $brandColorTextPrimary;
-}
-
-.card-font-size{
-    font-size: .8rem;
-}
-
-.hover-btn-start-now{
-    color: $brandColorTextSecondary;
-}
-
-.static-btn-start-now{
-    color: $brandColorContentText;
 }
