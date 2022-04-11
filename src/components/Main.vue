@@ -26,7 +26,7 @@
               Learn any coding program in distance and for a reasonable fee. You
               don't have to struggle alone, you've got our assistence and help.
             </p>
-            <a @mouseover="btnDownloadFree = true" @mouseleave="btnDownloadFree = false" class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs" :class="btnDownloadFree ? 'hover-button' : 'static-button'">
+            <a class="btn text-light static-button py-2 px-4 fw-bold position-relative my-btn-fs">
               <i class="fas fa-download me-2" role="button"></i>
               Download free E-book
             </a>
@@ -199,7 +199,7 @@
 
           <!-- Container of button -->
           <div class="col-12 text-center pt-4">
-            <a @mouseover="viewAllCourses = true" @mouseleave="viewAllCourses = false" class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs" :class="viewAllCourses ? 'hover-button' : 'static-button'">
+            <a class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs static-button">
               View all courses
               <i class="bi bi-arrow-right p1-2" role="button"></i>
             </a>
@@ -237,7 +237,7 @@
               </ul>
 
               <!-- Button -->
-              <a @mouseover="btnGetStartedFree = true" @mouseleave="btnGetStartedFree = false" class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs" :class="btnGetStartedFree ? 'hover-button' : 'static-button'">
+              <a class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs static-button">
                 Get started for free
               </a>
               
@@ -282,7 +282,7 @@
               <p class="text-size main-color ">Save lessons for later and revise or write notes at any time and on multiple devices on your way. Never interfere with activites of enjoyment or other precious moments.</p>
 
               <!-- Button -->
-              <a @mouseover="btnDownloadApp = true" @mouseleave="btnDownloadApp = false" class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs" :class="btnDownloadApp ? 'hover-button' : 'static-button'">
+              <a class="btn text-light py-2 px-4 fw-bold position-relative my-btn-fs static-button">
                 Download Our App
               </a>
               
@@ -316,13 +316,9 @@
 
           <!-- Container of cards -->
           <div class="col-12 w-100 d-flex flex-wrap gap-4 justify-content-center my-4">
-           <!--  d-flex gap-2 w-100 flex-wrap justify-content-center gap-3 -->
 
             <!-- Card -->
             <div @mouseover="getHoverCardLocation(index)" @mouseleave="leaveHoverCardLocation(index)" :class="(element.hover) ? 'shadow bg-light hover-card-contact' : ''" class="contact-card rounded d-flex justify-content-between p-4" v-for="(element, index) in getInContactCards" :key="index">
-
-              <!-- @mouseover="getHoverCardLocation(index)" @mouseleave="leaveHoverCardLocation(index)" -->
-              <!-- :class="(element.hoverEffect) ? 'shadow bg-light' : 'bg-transparent'" -->
 
               <div class="location">
                 <p class="text-size mb-0">
@@ -352,6 +348,72 @@
         </div>
       </div>
     </section>
+
+    <section id="feedback" >
+      <div class="ms-container position-relative pt-5">
+
+        <!-- First part -->
+        <div class="row pt-4">
+          <!-- Container of title -->
+          <div class="col-12 text-center">
+
+            <!-- Under title -->
+            <h6 class="text-uppercase text-size pb-1 fw-bold">
+              people are praising maxcoach
+            </h6>
+
+            <!-- Title -->
+            <h1 class="d-inline-block fw-bold main-color">What make they</h1>
+            <span class="fs-1 ps-2 in-title">love us?</span>
+          </div>
+
+          <!-- Container of cards -->
+          <div class="col-12 container-feedback-cards w-100 d-flex flex-wrap align-items-end gap-4 justify-content-center my-4">
+
+            <!-- Card -->
+            <div v-for="(element, index) in feedback" :key="index" class="card w-25 h-75 shadow text-center position-relative">
+              <img :src="require(`../assets/img/${element.image}`)" class="card-img-top rounded-circle w-50 position-absolute" :alt="element.avatarName">
+              <div class="card-body mt-5">
+                <p class="card-text py-4 main-color mb-0 my-btn-fs">{{element.text}}</p>
+                <h6 class="card-title text-uppercase fw-bold text-dark my-btn-fs">{{element.avatarName}}</h6>
+                <p class="text-size py-1">{{element.jobPosition}}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Container of points -->
+          <div class="col-12 points-container pt-2 text-center d-flex justify-content-center align-items-center">
+            <span class="active-point px-2"><i class="fas fa-circle"></i></span>
+            <span class="point px-2" v-for="(point,index) in 3" :key="index"><i class="fas fa-circle"></i></span>
+          </div>
+        </div>
+
+        <!-- Second part -->
+        <div class="row mt-5 px-5">
+          <div class="col-12 container-start-today text-center position-relative px-5">
+            <!-- Bg images -->
+            <img id="underlay-feedback-shape-lines" src="../assets/img/maxcoach-shape-01.png" class="position-absolute" alt="Maxcoach shape">
+            <img id="underlay-feedback-shape-circle" src="../assets/img/maxcoach-shape-02.png" class="position-absolute" alt="Maxcoach shape">
+
+            <!-- Under title -->
+            <h6 class="pb-1 main-color fw-bold mb-0">
+              Start today for getting <span class="in-title fw-normal">Online Certification</span>
+            </h6>
+
+            <!-- Title -->
+            <h3 class="d-inline-block fw-bold main-color mb-4">You can be your own guiding star with our help!</h3>
+
+            <!-- Button -->
+            <div>
+              <a class="static-button btn text-light py-2 px-5 fw-bold  my-btn-fs">
+                Get started now
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   
@@ -364,10 +426,6 @@ export default {
   data: function () {
     return {
       iconsListJumbo: ["far fa-dot-circle", "fas fa-book", "bi bi-cart3"],
-      btnDownloadFree: false,
-      viewAllCourses: false,
-      btnGetStartedFree: false,
-      btnDownloadApp: false,
       startLearningCards: [
         {
           image: "home-5-image-box-01.png",
@@ -537,6 +595,26 @@ export default {
           hover: false
         },
       ],
+      feedback: [
+        {
+          image: 'testimonial-avata-02.jpg',
+          text: 'I am free to learn at my own pace, follow my own schedule and choose the subject I like. Great study portal for people like me.',
+          avatarName: 'mina hollave',
+          jobPosition: '/ Freelancer'
+        },
+        {
+          image: 'testimonial-avata-04.jpg',
+          text: 'Maxcoach is my best choice. Their tutors are smart and professional when dealing with students.',
+          avatarName: 'madley pondor',
+          jobPosition: '/ IT Specialist'
+        },
+        {
+          image: 'testimonial-avata-01.jpg',
+          text: 'I am happy with their arrangement of lessons and subjects. They reflect a scientific investigation.',
+          avatarName: 'luvic dubble',
+          jobPosition: '/ Private Tutor'
+        }
+      ],
     };
   },
   methods: {
@@ -616,7 +694,6 @@ main {
       }
 
       a.my-btn{
-/*         color: $brandColorContentText; */
         transition: .4s;
       }
 
@@ -779,8 +856,45 @@ main {
 
       a{
         height: 22px;
+        color: $brandColorTextSecondary;
       }
     }
+  }
+
+  section#feedback{
+    background-color: $brandPrimary;
+    height: 840px;
+
+    div.container-feedback-cards{
+      height: 350px;
+      
+      img{
+        z-index: 2;
+        transform: translate(50%, -50%);
+      }
+    }
+
+    div.points-container{
+      height: 20px;
+    }
+
+    div.container-start-today{
+      height: 160px;
+
+      img#underlay-feedback-shape-lines{
+        width: 95px;
+        left: 80px;
+        top: 60px;
+      }
+
+      img#underlay-feedback-shape-circle{
+        width: 95px;
+        bottom: 0;
+        right: 80px;
+      }
+    }
+
+    
   }
 }
 </style>

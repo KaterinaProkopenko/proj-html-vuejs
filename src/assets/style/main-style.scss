@@ -46,11 +46,20 @@ h6{
     border: 1px solid $brandColorTextSecondary;
 }
 
-.hover-button{
+.hover-button,
+.static-button:hover{
     background-color: $brandColorTextPrimary;
     border: 1px solid $brandColorTextPrimary;
 }
-
 .hover-card-contact{
     border-left: 3px solid $brandColorTextSecondary;
+}
+
+span.active-point{
+    font-size: .6rem;
+    color: $brandColorTextPrimary;
+}
+span.point{
+    font-size: .4rem;
+    color: $brandColorContentText;
 }
