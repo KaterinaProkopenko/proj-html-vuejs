@@ -371,8 +371,8 @@
           <div class="col-12 container-feedback-cards w-100 d-flex flex-wrap align-items-end gap-4 justify-content-center my-4">
 
             <!-- Card -->
-            <div v-for="(element, index) in feedback" :key="index" class="card w-25 h-75 shadow text-center position-relative">
-              <img :src="require(`../assets/img/${element.image}`)" class="card-img-top rounded-circle w-50 position-absolute" :alt="element.avatarName">
+            <div v-for="(element, index) in feedback" :key="index" class="card h-75 shadow text-center position-relative">
+              <img :src="require(`../assets/img/${element.image}`)" class="card-img-top rounded-circle position-absolute" :alt="element.avatarName">
               <div class="card-body mt-5">
                 <p class="card-text py-4 main-color mb-0 my-btn-fs">{{element.text}}</p>
                 <h6 class="card-title text-uppercase fw-bold text-dark my-btn-fs">{{element.avatarName}}</h6>
@@ -866,11 +866,16 @@ main {
     height: 840px;
 
     div.container-feedback-cards{
-      height: 350px;
+      height: 380px;
       
       img{
         z-index: 2;
-        transform: translate(50%, -50%);
+        transform: translate(73%, -50%);
+        width: 120px;
+      }
+
+      div.card{
+        width: calc(80% / 3);
       }
     }
 
